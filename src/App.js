@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./Components/Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Index from "./Pages/Index";
+import ProductDetails, { loader } from "./Pages/ProductDetails";
+import Categories , {loader as catloader} from "./Pages/Categories";
 
 function App() {
+  const router = createBrowserRouter([
+    { path: "/", element: <Index /> },
+
+    { path: "/Categories/:id", element:<Categories/>,
+    loader:catloader },
+
+    { path: "/productDetails/:id",
+      element: <ProductDetails />,
+      loader: loader,
+    },
+
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <RouterProvider router={router} />
     </div>
   );
 }
