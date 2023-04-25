@@ -10,7 +10,7 @@ export function loader(req) {
 
 function ProductDetails() {
   const [products, setProduct] = useState([]);
-  debugger;
+  
   const { id } = useLoaderData();
 
   useEffect(() => {

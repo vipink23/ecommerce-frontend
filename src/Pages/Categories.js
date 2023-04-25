@@ -11,6 +11,7 @@ export function loader(req){
 function Categories() {
     const [collection ,setCollection]=useState([])
     const {id}=useLoaderData()
+    const navigate=useNavigate()
 
     
     useEffect(()=>{
@@ -25,8 +26,9 @@ function Categories() {
     <section>
         {collection?.map((col) => {
           return (
-            <div
-              className={styles.column + " " + styles.card_style}>
+            <div onClick={()=>
+              {navigate("/ProductDetails/" +col._id)}}
+              className={styles.column + " " + styles.card_style} >
               <figure>
                 <img src={col.image} />
               </figure>
