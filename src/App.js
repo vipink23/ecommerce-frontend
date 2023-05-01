@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./Pages/Index";
 import ProductDetails, { loader } from "./Pages/ProductDetails";
 import Categories , {loader as catloader} from "./Pages/Categories";
+import Cartlist from "./Pages/Cartlist";
 
 function App() {
   const router = createBrowserRouter([
@@ -16,6 +17,11 @@ function App() {
       element: <ProductDetails />,
       loader: loader,
     },
+    {
+      path:"/Cartlist",
+      element:<Cartlist/>,
+      loader:loader
+    }
 
   ]);
   return (

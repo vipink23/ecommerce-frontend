@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ProductDetails.css";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export function loader(req) {
@@ -12,6 +12,8 @@ function ProductDetails() {
   const [products, setProduct] = useState([]);
   
   const { id } = useLoaderData();
+
+  const navigate=useNavigate()
 
   useEffect(() => {
     axios
@@ -62,7 +64,7 @@ function ProductDetails() {
 
             <div className="purchase-info">
               <input type="number" min="0" />
-              <button type="button" className="btn">
+              <button type="button" className="btn" onClick={()=>{navigate('/Cartlist')}}>
                 Add to Cart <i className="fas fa-shopping-cart"></i>
               </button>
             </div>

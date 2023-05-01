@@ -3,8 +3,12 @@ import './Navbar.css'
 // import { Link } from 'react-router-dom'
 import {BsCart3} from 'react-icons/bs'
 
+
 function Navbar() {
 const [click ,setClick]=useState(false)
+
+
+
 
 const handleClick=()=>{
     setClick(!click)
