@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./ProductDetails.css";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { addtoCart } from "../Features/Cartlist/cartSlice";
+import { useDispatch,useSelector } from 'react-redux'
+
+
+
 
 export function loader(req) {
   console.log(req.params);
@@ -10,10 +15,15 @@ export function loader(req) {
 
 function ProductDetails() {
   const [products, setProduct] = useState([]);
+ 
   
-  const { id } = useLoaderData();
+  // const { id } = useLoaderData();
+  const { id } = useParams()
 
-  const navigate=useNavigate()
+
+  // const navigate=useNavigate()
+  const dispatch=useDispatch()
+ 
 
   useEffect(() => {
     axios
@@ -22,6 +32,7 @@ function ProductDetails() {
       .then((res) => {
         setProduct(res.data);
         //console.log(res.data);
+      
       });
   }, [id]);
   console.log(products, "pro");
@@ -64,9 +75,10 @@ function ProductDetails() {
 
             <div className="purchase-info">
               <input type="number" min="0" />
-              <button type="button" className="btn" onClick={()=>{navigate('/Cartlist')}}>
+              <button type="button" className="btn" onClick={()=>dispatch(addtoCart(products))}>
                 Add to Cart <i className="fas fa-shopping-cart"></i>
               </button>
+         
             </div>
           </div>
         </div>

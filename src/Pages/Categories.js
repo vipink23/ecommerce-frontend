@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useLoaderData, useNavigate } from 'react-router-dom'
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom'
 import styles from './Pages.module.css'
 
 export function loader(req){
@@ -10,7 +10,8 @@ export function loader(req){
 
 function Categories() {
     const [collection ,setCollection]=useState([])
-    const {id}=useLoaderData()
+    const {id}=useParams()
+    // const {id}=useLoaderData()
     const navigate=useNavigate()
 
     

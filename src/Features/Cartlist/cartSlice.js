@@ -8,7 +8,8 @@ export const cartSlice=createSlice({
     },
     reducers:{
         addtoCart:(state, action)=>{
-         state.cart.push({quantity: 1})
+            state.cart.push(action.payload)
+          }
         },
         incrementQuantity:(state,action)=>{
             state.cart += 1
@@ -20,7 +21,7 @@ export const cartSlice=createSlice({
       
 
     }
-})
+)
 
 export const {addtoCart,incrementQuantity,decrementQuantity}=cartSlice.actions
 export default cartSlice.reducer

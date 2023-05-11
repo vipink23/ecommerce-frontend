@@ -1,23 +1,13 @@
-import React, { useState,useEffect } from 'react'
-import Electronics from './Electronics'
-import Books from './Books'
-import Sports from './Sports'
-import axios from 'axios'
+import React from 'react'
 import HomePage from './HomePage'
-import Category from './Category'
-
+import Navbar from '../Components/Navbar'
 
 
 function Index() {
-    
-
   return (
     <div>
-        {/* <Electronics/>
-        <Books/>
-        <Sports/> */}
-       {/* <Category/> */}
-<HomePage/>       
+     
+<HomePage/>
     </div>
   )
 }
