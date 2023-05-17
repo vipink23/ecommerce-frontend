@@ -14,6 +14,8 @@ function Category(props) {
         }).then((res)=>{
             console.log(res.data,'proooooo')
             setProducts(res.data) 
+            const allProduct=res.data
+            console.log(allProduct , 'catttttt'); 
         })
     }, [])
     
@@ -23,9 +25,9 @@ function Category(props) {
     <div>
       <section>
         <h2 onClick={()=>{navigate('/Categories/'+props.category._id)}}>{props.category.name}</h2>
-        {products?.map((prod) => {
+        {products?.map((prod, index) => {
           return (
-            <div
+            <div key={index}
               className={styles.column + " " + styles.card_style} 
               onClick={() => {
                 navigate("/ProductDetails/" + prod._id);

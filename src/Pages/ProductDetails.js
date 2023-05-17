@@ -15,14 +15,16 @@ export function loader(req) {
 
 function ProductDetails() {
   const [products, setProduct] = useState([]);
- 
+
   
   // const { id } = useLoaderData();
   const { id } = useParams()
-
+  const navigate=useNavigate() 
 
   // const navigate=useNavigate()
   const dispatch=useDispatch()
+  const cartProduct = useSelector(state => state.cart.cart.find(item=> item._id === id));
+  const isProductinCart = cartProduct !== undefined;
  
 
   useEffect(() => {
@@ -36,6 +38,8 @@ function ProductDetails() {
       });
   }, [id]);
   console.log(products, "pro");
+
+  
 
   return (
     <div>
@@ -73,13 +77,27 @@ function ProductDetails() {
               </ul>
             </div>
 
-            <div className="purchase-info">
+            {/* <div className="purchase-info">
               <input type="number" min="0" />
               <button type="button" className="btn" onClick={()=>dispatch(addtoCart(products))}>
                 Add to Cart <i className="fas fa-shopping-cart"></i>
               </button>
          
-            </div>
+            </div> */}
+
+
+            <div className="purchase-info">
+      {isProductinCart ? (
+        <button type="button" className="btn" onClick={()=>{navigate('/Cartlist')}}>
+          Go to Cart <i className="fas fa-shopping-cart"></i>
+        </button>
+      ) : (
+        <button type="button" className="btn" onClick={() => dispatch(addtoCart(products))}>
+          Add to Cart <i className="fas fa-shopping-cart"></i>
+        </button>
+      )}
+    </div>
+            
           </div>
         </div>
       </div>

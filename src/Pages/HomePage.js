@@ -14,8 +14,8 @@ function HomePage() {
   console.log(category, "productsssss");
   return (
     <div>
-      {category?.map((cat) => {
-        return <Category category={cat} />;
+      {category?.map((cat,index) => {
+        return <Category category={cat} key={index} />;
       })}
     </div>
   );
