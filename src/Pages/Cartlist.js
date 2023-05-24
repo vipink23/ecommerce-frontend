@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  incrementQuantity,
-  decrementQuantity,
-} from "../Features/Cartlist/cartSlice";
+import { decrement, increment,remove } from "../Features/Cartlist/cartSlice";
 import "./Cartlist.css";
 import { useSelector } from "react-redux";
 
 function Cartlist() {
-  const productCart = useSelector((state) => state.cart.cart);
-  // const dispatch=useDispatch()
+  const productCart  = useSelector((state) => state.cart.cart);
+  console.log(productCart);
+  const dispatch = useDispatch();
 
-
+ 
+  const total=productCart.reduce((acc,current)=>{
+     return acc+current.total
+     
+  },0)
+  console.log(total, 'total');
   
   return (
     <div>
-
-
-
       <div className="small-container cart-page">
         <table>
           <tr>
@@ -36,19 +36,18 @@ function Cartlist() {
               />
               <div>
                 <p>{product.name}</p>
-                {/* <small>price:$50.00</small> */}
                 <br />
-
-                <a href="">remove</a>
+                <br/>
+                <a className="btnn" onClick={()=>dispatch(remove(product._id))}>remove</a>
               </div>
             </div>
           </td>
           <td>
-            <button >+</button>
-            <span>0</span>
-            <button onClick={() => console.log("incement")}>-</button>
+           {product.count >1 && <button onClick={()=>dispatch(decrement(product))} >-</button>} 
+            <span className="count">{product.count}</span>
+            <button onClick={()=> dispatch(increment(product))}>+</button>
           </td>
-          <td>${product.price}</td>
+          <td className="price"> ${product.total}</td>
         </tr>
         )
        })}
@@ -60,7 +59,7 @@ function Cartlist() {
           <table>
             <tr>
               <td>Total</td>
-              <td>$300</td>
+              <td>{total}</td>
             </tr>
           </table>
         </div>
