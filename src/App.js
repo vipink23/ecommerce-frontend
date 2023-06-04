@@ -6,6 +6,9 @@ import ProductDetails, { loader } from "./Pages/ProductDetails";
 import Categories , {loader as catloader} from "./Pages/Categories";
 import Cartlist from "./Pages/Cartlist";
 import HomePage from "./Pages/HomePage";
+import PayPal from "./Pages/PayPal";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
 
 
 function App() {
@@ -37,7 +40,10 @@ function App() {
         <Route path="/" element={<Index />} />
         <Route path="/categories/:id" element={<Categories />} loader={catloader} />
         <Route path="/productDetails/:id" element={<ProductDetails />} loader={loader} />
-        <Route path="/cartlist" element={<Cartlist />} />
+        <Route exact path="/cartlist" element={<Cartlist />} />
+        <Route path="cartlist/paypal" element={<PayPal/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/login" element={<Login/>}/>
       </Routes>
     </BrowserRouter>
      

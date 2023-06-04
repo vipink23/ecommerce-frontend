@@ -79,6 +79,43 @@ tr th{
     cursor: pointer;
     margin-left:20px;
     
- }     
+ }   
+ 
+  .bton{
+     
+        cursor: pointer;
+        top:50%;
+        background-color:#0a0a23;
+        color: #fff;
+        border:none; 
+        border-radius:10px; 
+        padding:15px;
+        min-height:30px; 
+        min-width: 120px;
+        /* margin-left: 1340px; */
+        margin-top: 80px;
+      }
+  
+
+
+      @media (max-width: 768px) {
+        .bton {
+          margin-left: 470px;
+        }
+      }
+      
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .bton {
+          margin-left: 50px;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .bton {
+          margin-left: 1340px;
+        }
+      }
+ 
+ 
 
   

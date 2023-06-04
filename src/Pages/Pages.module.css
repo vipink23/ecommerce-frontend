@@ -65,6 +65,7 @@ body {
     padding: 12px;
   }
   
+
   @media (min-width: 500px) {
     .column {
         flex: 0 0 calc(100%/2 - 40px);

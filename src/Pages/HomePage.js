@@ -7,7 +7,7 @@ function HomePage() {
 
   useEffect(() => {
     axios.get("http://localhost:3001/category").then((res) => {
-      console.log(res.data);
+      console.log(res.data, 'dataaaaa');
       setCategory(res.data);
     });
   }, []);

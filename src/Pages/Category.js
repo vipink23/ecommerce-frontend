@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 function Category(props) {
     const [products,setProducts]=useState([])
     const navigate=useNavigate()
-
+console.log(props ,'propssss');
     useEffect(()=>{
         console.log(props.category._id)
         axios.get("http://localhost:3001/products?categories="+ props.category._id, {
@@ -22,7 +22,7 @@ function Category(props) {
    
 
   return (
-    <div>
+    <div > 
       <section>
         <h2 onClick={()=>{navigate('/Categories/'+props.category._id)}}>{props.category.name}</h2>
         {products?.map((prod, index) => {

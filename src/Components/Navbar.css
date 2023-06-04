@@ -96,13 +96,11 @@ h1{
 
 /*dropdown */
 
-
   
   ul li {
      list-style: none;
      font-size: 18px;
   }
-  
   ul li button {
       font-size: inherit;
       border: none;
@@ -130,10 +128,9 @@ h1{
   /* toggle main dropdown */
   
  
-  
   .dropdown {
     padding: 2px 1.5rem;
-    height: 0;
+    height: 0px;
     overflow: hidden;
     transition: height ease 0.2s;
   }
@@ -142,7 +139,6 @@ h1{
     height: 135px;
   }
 
-  
   
   /* MEDIA QUERIES  */
   @media (min-width: 640px) {
@@ -158,9 +154,7 @@ h1{
       display: flex;
       transform: initial;
     }
-    
-   
-    
+     
     ul li {
       position: relative;
       font-size: 14px;
@@ -181,20 +175,17 @@ h1{
       z-index: 99;
       
       padding: 0;
-      background-color:rgb(121, 115, 127);
+      background-color:rgb(110, 107, 113);
       border-radius: 0 0 0.5rem 0.5rem; 
     }
-    
     ul li:hover .dropdown {
-      height: 135px;
+      height: auto
     }
-    
     ul li:hover > button > .arrow {
       transform: rotate(-225deg);
       margin-top: 4px;
     }
   }
-
   .button:hover::after,
 .button.active::after
 {
@@ -206,10 +197,79 @@ h1{
     bottom: -4px;
     left:20px;
 }
-
 .btn:hover,
 .btn:active{
     color:rgb(219, 152, 17)
-
 }
+
+.avtar{
+  color: rgb(250, 246, 246);
+  font-size: 1.3rem;
+  margin-left: 420px;
+  cursor: pointer;
+  
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .avtar {
+    margin-left: 50px;
+  }
+}
+
+ @media (min-width: 1024px) {
+  .avtar {
+    margin-left: 860px;
+  }
+} 
     
+
+/* for avtr dropdown */
+
+
+
+.menu {
+  position: absolute;
+  list-style-type: none;
+  margin: 19px 0 ;
+  padding: 0;
+  border: 1px solid rgb(219, 219, 219);
+  width: 110px;
+  box-shadow: 1px;
+  border-radius: 12px;
+}
+
+.menu > li {
+  margin: 10;
+  background-color:rgb(121, 115, 127);
+}
+
+/* .menu > li:hover {
+  background-color: lightgray;
+} */
+
+.menu > li > button {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 19px;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  
+}
+.item{
+  background-color:rgb(121, 115, 127);
+}
+
+
+
+
+/* @media (max-width: 768px) {
+  .avtar {
+    margin-left:70px;
+  }
+} */
+
