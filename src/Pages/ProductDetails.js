@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./ProductDetails.css";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { addtoCart } from "../Features/Cartlist/cartSlice";
-import { useDispatch,useSelector } from 'react-redux'
-
-
-
+import { useDispatch, useSelector } from "react-redux";
 
 export function loader(req) {
   console.log(req.params);
@@ -16,16 +13,14 @@ export function loader(req) {
 function ProductDetails() {
   const [products, setProduct] = useState([]);
 
-  
   // const { id } = useLoaderData();
-  const { id } = useParams()
-  const navigate=useNavigate() 
-
-  // const navigate=useNavigate()
-  const dispatch=useDispatch()
-  const cartProduct = useSelector(state => state.cart.cart.find(item=> item._id === id));
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cartProduct = useSelector((state) =>
+    state.cart.cart.find((item) => item._id === id)
+  );
   const isProductinCart = cartProduct !== undefined;
- 
 
   useEffect(() => {
     axios
@@ -34,12 +29,10 @@ function ProductDetails() {
       .then((res) => {
         setProduct(res.data);
         //console.log(res.data);
-      
       });
   }, [id]);
   console.log(products, "pro");
 
-  
 
   return (
     <div>
@@ -85,19 +78,27 @@ function ProductDetails() {
          
             </div> */}
 
-
             <div className="purchase-info">
-      {isProductinCart ? (
-        <button type="button" className="btn" onClick={()=>{navigate('/Cartlist')}}>
-          Go to Cart <i className="fas fa-shopping-cart"></i>
-        </button>
-      ) : (
-        <button type="button" className="btn" onClick={() => dispatch(addtoCart(products))}>
-          Add to Cart <i className="fas fa-shopping-cart"></i>
-        </button>
-      )}
-    </div>
-            
+              {isProductinCart ? (
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => {
+                    navigate("/Cartlist");
+                  }}
+                >
+                  Go to Cart <i className="fas fa-shopping-cart"></i>
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => dispatch(addtoCart(products))}
+                >
+                  Add to Cart <i className="fas fa-shopping-cart"></i>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

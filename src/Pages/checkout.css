@@ -1,0 +1,203 @@
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .col-25 {
+    flex: 25%;
+    padding: 0 16px;
+    
+  }
+  
+  .col-50 {
+    flex: 50%;
+    padding: 0 16px;
+  }
+  
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+  
+  .container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+  
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+  
+  .btnnnn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  .btnnnn:hover {
+    background-color: #45a049;
+  }
+  
+  span.price {
+    float: right;
+    color: grey;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+      margin-right: 56px;
+    }
+    .col-25 {
+      margin-bottom: 200px;
+    }
+  }
+ 
+
+  .app{
+    background-color: rgba(255, 255, 255, 0.928);
+    display: grid;
+    place-items:center;
+    margin-top: -130px;
+    margin-left: 450px;
+  }
+  .wraper{
+    background-color: lightgray;
+    padding: 100px;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .app {
+      margin-left: 0;
+    }
+  }
+  
+  /* Media query for big screens */
+  @media (min-width: 1200px) {
+    .app {
+      margin-left: 900px;
+    }
+  }
+
+  /* .app {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.928);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .wraper {
+    background-color: lightgray;
+    padding: 100px;
+    border-radius: 10px;
+  } */
+
+
+
+
+
+
+
+  /* table {
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #4a4a4d;
+    font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: auto;
+  }
+  th,
+  td {
+    padding: 10px 15px;
+    vertical-align: middle;
+  }
+  thead {
+    background: #395870;
+    background: linear-gradient(#49708f, #293f50);
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+  th:first-child {
+    border-top-left-radius: 5px;
+    text-align: left;
+  }
+  th:last-child {
+    border-top-right-radius: 5px;
+  }
+  tbody tr:nth-child(even) {
+    background: #f0f0f2;
+  }
+  td {
+    border-bottom: 1px solid #cecfd5;
+    border-right: 1px solid #cecfd5;
+  }
+  td:first-child {
+    border-left: 1px solid #cecfd5;
+  }
+  .book-title {
+    color: #395870;
+    display: block;
+  }
+  .text-offset {
+    color: #7c7c80;
+    font-size: 12px;
+  }
+  .item-stock,
+  .item-qty {
+    text-align: center;
+  }
+  .item-price {
+    text-align: right;
+  }
+  .item-multiple {
+    display: block;
+  }
+  tfoot {
+    text-align: right;
+  }
+  tfoot tr:last-child {
+    background: #f0f0f2;
+    color: #395870;
+    font-weight: bold;
+  }
+  tfoot tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+  }
+  tfoot tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+  } */

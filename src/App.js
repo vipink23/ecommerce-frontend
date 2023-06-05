@@ -5,10 +5,10 @@ import Index from "./Pages/Index";
 import ProductDetails, { loader } from "./Pages/ProductDetails";
 import Categories , {loader as catloader} from "./Pages/Categories";
 import Cartlist from "./Pages/Cartlist";
-import HomePage from "./Pages/HomePage";
 import PayPal from "./Pages/PayPal";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
+import CheckOut from "./Pages/CheckOut";
 
 
 function App() {
@@ -41,9 +41,10 @@ function App() {
         <Route path="/categories/:id" element={<Categories />} loader={catloader} />
         <Route path="/productDetails/:id" element={<ProductDetails />} loader={loader} />
         <Route exact path="/cartlist" element={<Cartlist />} />
-        <Route path="cartlist/paypal" element={<PayPal/>}/>
+        <Route path="/paypal" element={<PayPal/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/checkout" element={<CheckOut/>}/>
       </Routes>
     </BrowserRouter>
      

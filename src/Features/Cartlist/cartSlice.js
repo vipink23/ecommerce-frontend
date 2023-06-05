@@ -4,7 +4,7 @@ export const cartSlice=createSlice({
     name:'cart',
     initialState:{
         cart:[],
-        total:0
+        // total:0
 
     },
     reducers:{

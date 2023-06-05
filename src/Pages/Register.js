@@ -20,10 +20,10 @@ function Register() {
   
     const onsubmit = (e) => {
       console.log(e);
-      axios.post('/signup', e)
+      axios.post('http://localhost:3001/user/register', e)
         .then((res) => {
           console.log(res.data);
-          if (res.data.success) {
+          if (res.data.status) {
             navigate('/login');
           } else {
             setErrorMessage('Email is already exists...');
@@ -53,13 +53,13 @@ function Register() {
             </div>
           </div>
           <form className="login-form" onSubmit={handleSubmit(onsubmit)}>
-            <label className="lab" for="uname">
+            <label className="lab" for="username">
               Full Name
             </label>
             <input
               type="text"
-              {...register("fullName", { required: "fill the name" })}
-               />{errors?.fullName && (<p className="error">{errors?.fullName?.message}</p>)}
+              {...register("username", { required: "fill the name" })}
+               />{errors?.username && (<p className="error">{errors?.username?.message}</p>)}
             
             <label className="lab" for="password">
               Email
@@ -88,6 +88,11 @@ function Register() {
             />{errors?.password && (<p className="error">{errors?.password?.message}</p>)}
            
             <button>signup</button>
+            <div><p onClick={() => {
+                navigate("/login");
+              }}
+              style={{ marginTop: "18px", fontSize: "16px", cursor: "pointer" }}
+           >already have account</p></div>
             
           </form>
         </div>

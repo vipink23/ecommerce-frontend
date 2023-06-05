@@ -22,9 +22,9 @@ function Login() {
   const onsubmit = (e) => {
     console.log(e);
     axios.post("http://localhost:3001/user/login", e).then((res) => {
-      console.log(res.data);
+      console.log(res.data, "useeeeer");
       if (res.data.status) {
-          dispatch(login({user:res.data.user,token:res.data.accesstoken}));
+        dispatch(login({ user: res.data.user, token: res.data.accesstoken }));
         navigate("/");
       } else {
         setErrormsg("password does not match");
@@ -44,20 +44,10 @@ function Login() {
           marginTop: "1px",
           marginRight: "20px",
         }}
-      >
-        {/* <p style={{ marginRight: "10px" }}>dont have an account?</p>
-        <button
-          style={{
-            backgroundImage: "linear-gradient(45deg, #9dbddd, #2a42a2)",
-          }}
-          onClick={() => navigate("/")}
-        >
-          Register
-        </button> */}
-      </div>
-      <div class="login-page">
+      ></div>
+      <div className="login-page">
         <div className="form">
-          <div class="login">
+          <div className="login">
             <div className="login-header">
               <h3>Welcome back!</h3>
               <p></p>
@@ -87,6 +77,14 @@ function Login() {
             )}
 
             <button>login</button>
+            <p
+              onClick={() => {
+                navigate("/register");
+              }}
+              style={{ marginTop: "18px", fontSize: "16px", cursor: "pointer" }}
+            >
+              Dont you have account?
+            </p>
           </form>
         </div>
       </div>

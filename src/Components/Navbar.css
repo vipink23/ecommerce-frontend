@@ -62,7 +62,7 @@ nav{
         right: -300px;
         width: 300px;
         height: 100vh;
-        background: rgb(100, 99, 99);
+        background: rgb(121, 115, 127);
         box-shadow: 0 40px 60px rgba(0,0,0, .1);
         padding :40px 0 0 10px;
         transition: 0.4s ease-in-out;
@@ -160,11 +160,11 @@ h1{
       font-size: 14px;
     }
     
-    ul li a:hover,
+    /* ul li a:hover,
     ul li button:hover {
       background-color:rgb(58, 21, 21);
       background: none;
-    }
+    } */
     
     .dropdown {
       position: absolute;
@@ -173,20 +173,20 @@ h1{
       box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
       0 4px 6px -2px rgba(149, 148, 151, 0.16);
       z-index: 99;
-      
+      margin-top: 0;
       padding: 0;
-      background-color:rgb(110, 107, 113);
+      background-color:rgb(121, 115, 127);;
       border-radius: 0 0 0.5rem 0.5rem; 
     }
     ul li:hover .dropdown {
       height: auto
     }
-    ul li:hover > button > .arrow {
+    /* ul li:hover > button > .arrow {
       transform: rotate(-225deg);
       margin-top: 4px;
-    }
+    } */
   }
-  .button:hover::after,
+  /* .button:hover::after,
 .button.active::after
 {
     content: '';
@@ -196,17 +196,18 @@ h1{
     position: absolute;
     bottom: -4px;
     left:20px;
-}
-.btn:hover,
-.btn:active{
+} */
+.btn:hover
+{
     color:rgb(219, 152, 17)
 }
 
 .avtar{
   color: rgb(250, 246, 246);
   font-size: 1.3rem;
-  margin-left: 420px;
+  margin-left: 380px;
   cursor: pointer;
+  border-radius: 2px;
   
 }
 
