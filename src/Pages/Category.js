@@ -14,8 +14,8 @@ console.log(props ,'propssss');
         }).then((res)=>{
             console.log(res.data,'proooooo')
             setProducts(res.data) 
-            const allProduct=res.data
-            console.log(allProduct , 'catttttt'); 
+            // const allProduct=res.data
+            // console.log(allProduct , 'catttttt'); 
         })
     }, [])
     

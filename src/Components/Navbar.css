@@ -205,21 +205,27 @@ h1{
 .avtar{
   color: rgb(250, 246, 246);
   font-size: 1.3rem;
-  margin-left: 380px;
+  margin-left: 690px;
   cursor: pointer;
   border-radius: 2px;
   
 }
 
+@media (max-width: 768px) {
+  .avtar {
+    margin-left: 150px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .avtar {
-    margin-left: 50px;
+    margin-left: 10px;
   }
 }
 
  @media (min-width: 1024px) {
   .avtar {
-    margin-left: 860px;
+    margin-left: 490px;
   }
 } 
     

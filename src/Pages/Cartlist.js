@@ -26,7 +26,8 @@ function Cartlist() {
       return;
     }
     const data = {
-      user: user.user._id, // Replace with the actual user ID
+      user: user.user._id,
+       // Replace with the actual user ID
       cartItem: productCart.map((product) => ({
         product: product._id,
         quantity: product.count,
@@ -34,9 +35,18 @@ function Cartlist() {
       })),
       subtotal: total,
     };
+   console.log(user.token,'tokeeeennnnnnn');
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+       
+        // Replace `userToken` with the actual user token
+      },
+    };
 
     axios
-      .post("http://localhost:3001/cart", data)
+      .post("http://localhost:3001/cart", data,config)
       .then((res) => {
         console.log(res, "ressssssss");
       })

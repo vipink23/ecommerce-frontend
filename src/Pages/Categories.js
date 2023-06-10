@@ -26,6 +26,7 @@ function Categories() {
     <div>
       <section>
         {collection?.map((col, index) => {
+          console.log(col,'collllll');
           return (
             <div
               key={index}

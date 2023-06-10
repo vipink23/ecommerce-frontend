@@ -6,6 +6,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../Features/userSlice/user";
+import { cartNull } from "../Features/Cartlist/cartSlice";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -33,6 +34,7 @@ function Navbar() {
   
   const logoutuser = () => {
     dispatch(logout());
+    dispatch(cartNull())
     setOpen(false);
   };
 
@@ -73,7 +75,11 @@ function Navbar() {
             <ul className="dropdown">
               {category.map((cat, index) => (
                 <li key={index}>
-                  <button onClick={() => navigate("/Categories/" + cat._id)}>
+                  <button onMouseEnter={() => navigate("/Categories/" + cat._id)}
+                    //  onMouseLeave={() => navigate("/")}
+                      // onClick={()=> navigate("/Categories/" + cat._id)
+                      // }
+                      >
                     {cat.name}
                   </button>
                 </li>
