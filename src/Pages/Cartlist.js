@@ -7,11 +7,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Cartlist() {
-  // const [checkout, setChecout] = useState(false);
   const productCart = useSelector((state) => state.cart.cart);
   const user = useSelector((state) => state.user);
-  console.log(user, "useeeeeeeee");
-  console.log(productCart, "redux product");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,13 +18,12 @@ function Cartlist() {
 
   const handleCheckout = () => {
     if (!user.user) {
-      // User is not logged in, redirect to login page
       navigate("/login");
       return;
     }
+    
     const data = {
       user: user.user._id,
-       // Replace with the actual user ID
       cartItem: productCart.map((product) => ({
         product: product._id,
         quantity: product.count,
@@ -35,18 +31,16 @@ function Cartlist() {
       })),
       subtotal: total,
     };
-   console.log(user.token,'tokeeeennnnnnn');
+    console.log(user.token, "tokeeeennnnnnn");
 
     const config = {
       headers: {
         Authorization: `Bearer ${user.token}`,
-       
-        // Replace `userToken` with the actual user token
       },
     };
 
     axios
-      .post("http://localhost:3001/cart", data,config)
+      .post("http://localhost:3001/cart", data, config)
       .then((res) => {
         console.log(res, "ressssssss");
       })

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./Pages.module.css";
 
 export function loader(req) {
@@ -12,8 +12,7 @@ function Categories() {
   const [collection, setCollection] = useState([]);
   const { id } = useParams();
 
- console.log(id);
-  // const {id}=useLoaderData()
+  console.log(id);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,7 +25,7 @@ function Categories() {
     <div>
       <section>
         {collection?.map((col, index) => {
-          console.log(col,'collllll');
+          console.log(col, "collllll");
           return (
             <div
               key={index}

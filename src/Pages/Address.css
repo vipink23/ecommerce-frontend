@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext");
+
+.cardss {
+  border-radius: 10px;
+  margin-top: 60px;
+  margin-left: 890px;
+  /* filter: drop-shadow(0 5px 10px 0 #ffffff); */
+  width: 200px;
+  height: 180px;
+  background-color: #ffffff;
+  padding: 20px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  transition: 0.6s ease-in;
+  cursor: pointer;
+}
+
+
+.cardss::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -15px;
+  right: -15px;
+  background: #9473c7;
+  height:220px;
+  width: 25px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-out;
+}
+
+.cardss:hover::before{
+    transition-delay:0.2s ;
+  transform: scale(40);
+}
+
+.cardss:hover{
+    color: #ffffff;
+
+}
+
+.cardss p{
+    padding: 10px 0;
+}
+.rowss button{
+
+  margin-top: 5px;
+  color: red;
+  margin: none;
+}
+
+@media (max-width: 768px) {
+  .cardss {
+    margin-left: 199px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cardss {
+    margin-left: 638px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardss {
+    margin-left: 1110px;
+  }
+}
+
+@media (max-width: 768px) {
+  .buttonn {
+    margin-left: 219px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .buttonn{
+    margin-left: 638px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .buttonn {
+    margin-left: 1120px;
+  }
+}

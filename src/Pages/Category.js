@@ -1,37 +1,44 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import styles from './Pages.module.css'
-import { useNavigate } from 'react-router-dom'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import styles from "./Pages.module.css";
+import { useNavigate } from "react-router-dom";
 
 function Category(props) {
-    const [products,setProducts]=useState([])
-    const navigate=useNavigate()
-console.log(props ,'propssss');
-    useEffect(()=>{
-        console.log(props.category._id)
-        axios.get("http://localhost:3001/products?categories="+ props.category._id, {
-         
-        }).then((res)=>{
-            console.log(res.data,'proooooo')
-            setProducts(res.data) 
-            // const allProduct=res.data
-            // console.log(allProduct , 'catttttt'); 
-        })
-    }, [])
-    
-   
+  const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+  console.log(props, "propssss");
+  useEffect(() => {
+    console.log(props.category._id);
+    axios
+      .get(
+        "http://localhost:3001/products?categories=" + props.category._id,
+        {}
+      )
+      .then((res) => {
+        console.log(res.data, "proooooo");
+        setProducts(res.data);
+      });
+  }, []);
 
   return (
-    <div > 
+    <div>
       <section>
-        <h2 onClick={()=>{navigate('/Categories/'+props.category._id)}}>{props.category.name}</h2>
+        <h2
+          onClick={() => {
+            navigate("/Categories/" + props.category._id);
+          }}
+        >
+          {props.category.name}
+        </h2>
         {products?.map((prod, index) => {
           return (
-            <div key={index}
-              className={styles.column + " " + styles.card_style} 
+            <div
+              key={index}
+              className={styles.column + " " + styles.card_style}
               onClick={() => {
                 navigate("/ProductDetails/" + prod._id);
-              }} >
+              }}
+            >
               <figure>
                 <img src={prod.image} />
               </figure>
@@ -45,7 +52,7 @@ console.log(props ,'propssss');
         })}
       </section>
     </div>
-  )
+  );
 }
 
-export default Category
+export default Category;
