@@ -2,8 +2,8 @@
 
 .cardss {
   border-radius: 10px;
-  margin-top: 60px;
-  margin-left: 890px;
+  margin-top: 40px;
+  /* margin-left: 890px; */
   /* filter: drop-shadow(0 5px 10px 0 #ffffff); */
   width: 200px;
   height: 180px;
@@ -14,14 +14,14 @@
   overflow: hidden;
   transition: 0.6s ease-in;
   cursor: pointer;
-}
 
+}
 
 .cardss::before {
   content: "";
   position: absolute;
   z-index: -1;
-  top: -15px;
+  top: -150px;
   right: -15px;
   background: #9473c7;
   height:220px;
@@ -54,7 +54,8 @@
 
 @media (max-width: 768px) {
   .cardss {
-    margin-left: 199px;
+    margin-left: 120px;
+    margin-top: 40px;
   }
 }
 
@@ -66,13 +67,13 @@
 
 @media (min-width: 1024px) {
   .cardss {
-    margin-left: 1110px;
+    margin-left: 687px;
   }
 }
 
 @media (max-width: 768px) {
   .buttonn {
-    margin-left: 219px;
+    margin-left: 10px;
   }
 }
 
@@ -84,6 +85,16 @@
 
 @media (min-width: 1024px) {
   .buttonn {
-    margin-left: 1120px;
+    margin-left: 110px;
   }
+}
+
+.rowss {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.contain {
+  margin-top: -700px;
 }

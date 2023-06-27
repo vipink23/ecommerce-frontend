@@ -13,6 +13,7 @@ import PayPal from "./Pages/PayPal";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import CheckOut from "./Pages/CheckOut";
+import PrivateRoutes from "./Utils/PrivateRoutes";
 
 function App() {
   return (
@@ -32,10 +33,12 @@ function App() {
             loader={loader}
           />
           <Route exact path="/cartlist" element={<Cartlist />} />
-          <Route path="/paypal" element={<PayPal />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route element ={<PrivateRoutes/>}>
+          <Route path="/paypal" element={<PayPal />} />
           <Route path="/checkout" element={<CheckOut />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -31,10 +31,10 @@ function Navbar() {
   const handleOpen = () => {
     setOpen(!open);
   };
-  
+
   const logoutuser = () => {
     dispatch(logout());
-    dispatch(cartNull())
+    dispatch(cartNull());
     setOpen(false);
   };
 
@@ -48,7 +48,6 @@ function Navbar() {
         {open ? (
           <div>
             <ul className="menu">
-              {/* <p className="item">{user?.username}</p> */}
               <li className="menu-item">
                 {user ? (
                   <button onClick={() => logoutuser()}>Logout</button>
@@ -60,7 +59,9 @@ function Navbar() {
           </div>
         ) : null}
       </div>
-      <div><p style={{color:'white',fontSize: "1.4em"}}>{user?.username}</p></div>
+      <div>
+        <p style={{ color: "white", fontSize: "1.4em" }}>{user?.username}</p>
+      </div>
       <div>
         <ul className={click ? "navbar active" : "navbar"}>
           <li>
@@ -75,11 +76,12 @@ function Navbar() {
             <ul className="dropdown">
               {category.map((cat, index) => (
                 <li key={index}>
-                  <button onMouseEnter={() => navigate("/Categories/" + cat._id)}
+                  <button
+                    onMouseEnter={() => navigate("/Categories/" + cat._id)}
                     //  onMouseLeave={() => navigate("/")}
-                      // onClick={()=> navigate("/Categories/" + cat._id)
-                      // }
-                      >
+                    // onClick={()=> navigate("/Categories/" + cat._id)
+                    // }
+                  >
                     {cat.name}
                   </button>
                 </li>

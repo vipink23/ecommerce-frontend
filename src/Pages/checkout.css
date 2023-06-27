@@ -86,31 +86,7 @@
   }
  
 
-  .app{
-    background-color: rgba(255, 255, 255, 0.928);
-    display: grid;
-    place-items:center;
-    margin-top: -130px;
-    margin-left: 450px;
-  }
-  .wraper{
-    background-color: lightgray;
-    padding: 100px;
-    border-radius: 10px;
-  }
-
-  @media (max-width: 600px) {
-    .app {
-      margin-left: 0;
-    }
-  }
-  
-  /* Media query for big screens */
-  @media (min-width: 1200px) {
-    .app {
-      margin-left: 900px;
-    }
-  }
+ 
 
   /* .app {
     width: 100%;

@@ -54,7 +54,7 @@ function Address({ click, onValueChange }) {
             <p>{adr.state}</p>
             <p>{adr.pincode}</p>
             <p>{adr.mobileNumber}</p>
-          </div>
+            </div>
           <button className="buttonn" onClick={() => deleteAddress(adr._id)}>
             delete
           </button>

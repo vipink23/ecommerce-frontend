@@ -1,8 +1,14 @@
+import { useState } from "react";
 import "./PayPal.css";
+
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
-function PayPal({ address, total }) {
-  console.log(address, "adddddddddrrrr", total);
+function PayPal({ address, total,cartProducts }) {
+  const [addressName, setAddressName] = useState(address.name);
+  // const adrname=address.name
+
+  console.log(address, "adddddddddrrrr", total,cartProducts);
+  console.log(address.name,'adrnamessss');
   return (
     <div className="app">
       <PayPalScriptProvider
@@ -24,8 +30,10 @@ function PayPal({ address, total }) {
           }}
           onApprove={(data, actions) => {
             return actions.order.capture().then((details) => {
-              const name = details.payer.name.given_name;
-              alert(`Transaction completed by ${name}`);
+              // const name = details.payer.name.given_name;
+              
+              console.log(addressName,'adrname');
+              alert(`Transaction completed by ${addressName}`);
             });
           }}
         />

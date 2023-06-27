@@ -21,7 +21,7 @@ function Cartlist() {
       navigate("/login");
       return;
     }
-    
+
     const data = {
       user: user.user._id,
       cartItem: productCart.map((product) => ({

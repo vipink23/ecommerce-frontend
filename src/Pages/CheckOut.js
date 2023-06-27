@@ -14,6 +14,8 @@ function CheckOut() {
 
   const user = useSelector((state) => state.user);
   console.log(user, "from checkout");
+  const products=useSelector((state)=>state.cart.cart)
+  console.log(products,'cartproductss');
 
   const submitAddress = (e) => {
     e.preventDefault();
@@ -118,7 +120,7 @@ function CheckOut() {
       </div>
 
       <Address onValueChange={handleChildValue} click={click} />
-      <PayPal total={total} address={address} />
+      <PayPal total={total} address={address} cartProducts={products} />
     </div>
   );
 }
