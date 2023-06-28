@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import "./Address.css";
+import "../Pages/Cssfiles/Address.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Address({ click, onValueChange }) {

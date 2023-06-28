@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./ProductDetails.css";
+import "../Pages/Cssfiles/ProductDetails.css";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { addtoCart } from "../Features/Cartlist/cartSlice";

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import styles from "./Pages.module.css";
+import styles from "../Pages/Cssfiles/Pages.module.css";
 import { useNavigate } from "react-router-dom";
 
 function Category(props) {

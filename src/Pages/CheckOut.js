@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./checkout.css";
+import "../Pages/Cssfiles/checkout.css";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";

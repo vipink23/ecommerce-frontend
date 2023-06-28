@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { decrement, increment, remove } from "../Features/Cartlist/cartSlice";
-import "./Cartlist.css";
+import "../Pages/Cssfiles/Cartlist.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import styles from "./Pages.module.css";
+import styles from "../Pages/Cssfiles/Pages.module.css";
 
 export function loader(req) {
   console.log(req.params, "catogoriessss");
